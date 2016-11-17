@@ -149,7 +149,7 @@ function getfilefromweb($gf){
                 $state = get_headers($link);
                 //preg_match('/403 Forbidden/i', $state[0], $searchhttp);
                 if ($state[0] == "HTTP/1.1 401 Unauthorized"){
-                        $param = $settings['upload_dir']."/v".$curver." --http-user=".$settings['user']." --http-password=".$settings['user']." --http-password=".$settings['password']." ".$link.$gf;
+                        $param = $settings['upload_dir']."/v".$curver." --http-user=".$settings['user']." --http-password=".$settings['password']." ".$link.$gf;
                         passthru("/usr/".getostype()."bin/wget -N -P ".$param, $result);
                         return 0;
                 }
